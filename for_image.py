@@ -4,7 +4,7 @@ from django.utils.timezone import now
 
 
 def give_name(name, string):
-    folders = ['product', 'subCategory', 'sub2Category', 'file', 'banner']
+    folders = ['blog', 'banner', 'feedback', 'specialist']
     ext = name.rsplit('.', 1)
 
     n = name.split('/')[0]

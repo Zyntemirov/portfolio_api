@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'service.apps.ServiceConfig',
     'work.apps.WorkConfig',
     'feedback.apps.FeedbackConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
