@@ -20,7 +20,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('banner/', include('banner.urls')),
+    path('banners/', include('banner.urls')),
     path('specialist/', include('specialist.urls')),
-    path('service/', include('service.urls')),
+    path('services/', include('service.urls')),
+    path('works/', include('work.urls')),
+    path('feedbacks/', include('feedback.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

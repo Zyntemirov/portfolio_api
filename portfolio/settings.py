@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'banner.apps.BannerConfig',
     'specialist.apps.SpecialistConfig',
-    'service.apps.ServiceConfig'
+    'service.apps.ServiceConfig',
+    'work.apps.WorkConfig',
+    'feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [
