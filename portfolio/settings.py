@@ -26,13 +26,22 @@ SECRET_KEY = '1wzchlxq*-$5)9mb%qr19#sgf+yx(rgj@y*zdmj0_^n6jd_*4t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-portfolio-api.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 
 # Application definition
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 INSTALLED_APPS = [
+    'drf_yasg',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

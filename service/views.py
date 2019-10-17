@@ -1,20 +1,16 @@
-import json
-from django.core import serializers
+from rest_framework import viewsets
+from service.serializers import ServiceSerializer, SuccessSerializer
 
-from django.http import JsonResponse
+from service.models import Service, Success
 
-from .models import Service, Success
+class ServicesAllView(viewsets.generics.ListCreateAPIView):
+    serializer_class = ServiceSerializer
+    queryset = Service.objects.all()
 
-def get_services(request):
-    services = Service.objects.all()
-    json_services = serializers.serialize('json', services)
-    json_services = json.loads(json_services)
+# class ServicesUpdateView(viewsets.generics.RetrieveUpdateDestroyAPIView):
+#     serializer_class = ServiceSerializer
+#     queryset = Service.objects.all()
 
-    return JsonResponse({'services': json_services})
-
-def get_success(request):
-    success = Success.objects.all()
-    json_success = serializers.serialize('json', success)
-    json_success = json.loads(json_success)
-
-    return JsonResponse({'services': json_success})
+class SuccessView(viewsets.generics.ListCreateAPIView):
+    serializer_class = SuccessSerializer
+    queryset = Success.objects.all()
